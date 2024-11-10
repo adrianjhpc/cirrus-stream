@@ -1,4 +1,4 @@
-
+COMPILER=NVIDIA
 ifndef COMPILER
 define compiler_help
 Set COMPILER to change flags (defaulting to GNU).
@@ -7,7 +7,6 @@ Available compilers are:
 
 endef
 $(info $(compiler_help))
-COMPILER=NVIDIA
 endif
 
 TARGET=NVIDIA
