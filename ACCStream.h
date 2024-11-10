@@ -1,0 +1,38 @@
+#pragma once
+
+#include <iostream>
+#include <stdexcept>
+
+#include "Stream.h"
+
+#include <openacc.h>
+
+#define IMPLEMENTATION_STRING "OpenACC"
+
+template <class T>
+class ACCStream : public Stream<T>
+{
+  protected:
+    // Size of arrays
+    unsigned int array_size;
+    // Device side pointers
+    T *a;
+    T *b;
+    T *c;
+
+  public:
+    ACCStream(const unsigned int, T*, T*, T*, int);
+    ~ACCStream();
+
+    virtual void copy() override;
+    virtual void add() override;
+    virtual void mul() override;
+    virtual void triad() override;
+    virtual T dot() override;
+
+    virtual void init_arrays(T initA, T initB, T initC) override;
+    virtual void read_arrays(std::vector<T>& a, std::vector<T>& b, std::vector<T>& c) override;
+
+
+
+};
