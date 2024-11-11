@@ -6,9 +6,9 @@
 #SBATCH --output=%x-%j.out
 #SBATCH --gres=gpu:1
 #SBATCH --partition=gpu
-#SBATCH --qos=gpu
-##SBATCH --qos=reservation
-##SBATCH --reservation=m24oc_1369492
+##SBATCH --qos=gpu
+#SBATCH --qos=reservation
+#SBATCH --reservation=m24oc_1369492
 
 module --silent load gcc
 module --silent load nvidia/nvhpc
