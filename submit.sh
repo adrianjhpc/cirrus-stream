@@ -18,9 +18,9 @@ module --silent load nvidia/nvhpc
 srun --unbuffered ./cuda-stream
 
 
-srun --unbuffered ./omp-stream
+#srun --unbuffered ./omp-stream
 
 
-make -f Make.OpenACC clean
-make -f Make.OpenACC 
-srun --unbuffered ./acc-stream
+#make -f OpenACC.make clean
+#make -f OpenACC.make
+#srun --unbuffered ./acc-stream
